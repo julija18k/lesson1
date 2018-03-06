@@ -46,7 +46,7 @@ public class Main {
         u2.name="Viki";
         u2.WhatisYourName();
         String s;
-        
+
     }
 }
 /*class Human{
