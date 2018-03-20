@@ -31,6 +31,7 @@ public class Main {
 			dir.mkdirs();
 		}
 		dir.list();
+
 		String files[]=dir.list();
 		for (int i=0; i<files.length; i++){
 			System.out.println(files[i]);
@@ -45,6 +46,8 @@ public class Main {
 		} catch (UnsupportedEncodingException e) {
 			e.printStackTrace();
 		}
+		File file []=dir.listFiles();//выводит все папки
+
 
 		System.out.println(f.lastModified());//показывает сколько милисек прошло с 1970 по время создания, изменения файла
 	/*User u1=new User("user", "user@mail.ru");
