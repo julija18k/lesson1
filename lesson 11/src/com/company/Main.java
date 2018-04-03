@@ -6,7 +6,7 @@ public class Main {
 
     public static void main(String[] args) {
         try {
-            Class.forName("com.mysql.jdbc.Driver");//загрузка библиотеки
+            Class.forName("com.mysql.jdbc.Driver");//загрузка библиотеки, для начала скачать этот файл
         } catch (ClassNotFoundException e) {
             e.printStackTrace();
         }//  подключение к базе данных
@@ -19,7 +19,7 @@ public class Main {
         try {
             PreparedStatement ps= conn.prepareStatement("SELECT*FROM user");
             ResultSet result = ps.executeQuery(); // создаем объект в котором будет сохр результат команды
-            while (result.next()){
+            while (result.next()){// next  записывает построчно
                 System.out.println(result.getInt("id"));// выводим столбик айди тип указываем инт
                 System.out.println(result.getString("login"));// выводим столбик логин тип указываем  стринг
                 System.out.println(result.getString("reg_date"));
