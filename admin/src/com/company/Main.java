@@ -1,6 +1,7 @@
 package com.company;
 
 import com.company.collections.ItemCollection;
+import com.company.handlers.SignInHandler;
 import com.company.models.Item;
 import com.sun.net.httpserver.HttpExchange;
 import com.sun.net.httpserver.HttpHandler;
@@ -50,13 +51,13 @@ public class Main {
     }*/
 
         HttpServer server = HttpServer.create(new InetSocketAddress(8000), 0);
-        server.createContext("/signin", new MyHandler());
+        server.createContext("/signin", new SignInHandler() );
         server.setExecutor(null); // creates a default executor
         server.start();
 
     }
 
-    static class MyHandler implements HttpHandler {
+    /*static class MyHandler implements HttpHandler {
         @Override
         public void handle(HttpExchange t) throws IOException {
             String response = "This is the response";
@@ -65,5 +66,5 @@ public class Main {
             os.write(response.getBytes());
             os.close();
         }
-    }
+    }*/
 }
