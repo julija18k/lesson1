@@ -1,7 +1,7 @@
 package com.company;
 
 import com.company.collections.ItemCollection;
-import com.company.handlers.SignInHandler;
+import com.company.handlers.*;
 import com.company.models.Item;
 import com.sun.net.httpserver.HttpExchange;
 import com.sun.net.httpserver.HttpHandler;
@@ -52,6 +52,10 @@ public class Main {
 
         HttpServer server = HttpServer.create(new InetSocketAddress(8000), 0);
         server.createContext("/signin", new SignInHandler() );
+        server.createContext("/getitems", new GetItemsHandler() );
+        server.createContext("/additem", new AddItemHandler() );
+        server.createContext("/edititem", new EditItemHandler() );
+        server.createContext("/deleteitem", new DeleteItemHandler() );
         server.setExecutor(null); // creates a default executor
         server.start();
 
